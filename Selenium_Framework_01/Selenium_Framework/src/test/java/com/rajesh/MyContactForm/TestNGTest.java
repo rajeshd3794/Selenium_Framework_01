@@ -1,4 +1,4 @@
-package com.rajesh.homePage;
+package com.rajesh.MyContactForm;
 
 import org.testng.SkipException;
 import org.testng.annotations.Test;
@@ -14,9 +14,9 @@ public class TestNGTest
 	@Test
 	public void Secondmethod() 
 	{
-		String a = "Addtya";
+		String a = "Rajesh";
 		
-		if(!a.equals("Aditya"))
+		if(!a.equals("Rajesh"))
 			throw new SkipException("Not Matched");
 		else
 			System.out.println("matched");

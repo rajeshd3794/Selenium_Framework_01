@@ -80,20 +80,7 @@ public class AppConfig
 		return null;
 	}
 	
-	public static String getExcelPath() throws IOException
-	{
-		try
-		{
-			fis = new FileInputStream(appFile);
-			prop = new Properties();
-			prop.load(fis);
-			
-			return prop.getProperty("DataSheetLocation");
-		}
-		catch(Exception e){ e.printStackTrace();}
-		return null;
-	}
-	
+		
 	public static String getReportPath() throws IOException
 	{
 		try
@@ -136,33 +123,6 @@ public class AppConfig
 	return null;
 }
 
-	public static String getMacyURL() throws IOException
-	{
-		try
-		{
-			fis = new FileInputStream(appFile);
-			prop = new Properties();
-			prop.load(fis);
-			
-			return prop.getProperty("MacyURL");
-		}
-		catch(Exception e){ e.printStackTrace();}
-		return null;
-	}
 	
-	public static String getMacyData() throws IOException
-	{
-		try
-		{
-			fis = new FileInputStream(appFile);
-			prop = new Properties();
-			prop.load(fis);
-			
-			return prop.getProperty("MacyProfileSheet");
-		}
-		catch(Exception e){ e.printStackTrace();}
-		return null;
-	}
 	
-
 }

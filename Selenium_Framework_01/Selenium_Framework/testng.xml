@@ -3,7 +3,7 @@
 <suite thread-count="1" name="Suite" parallel="classes">
   <test name="Test">
     <classes>
-      <class name="com.rajesh.homePage.MyContactForm_Login"/>
+      <class name="com.rajesh.MyContactForm.MyContactForm_Login"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
