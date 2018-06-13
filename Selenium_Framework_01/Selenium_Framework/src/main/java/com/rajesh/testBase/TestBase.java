@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.Proxy;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -26,8 +27,11 @@ import org.openqa.selenium.ie.InternetExplorerOptions;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import com.rajesh.utility.AppConfig;
+
+import io.appium.java_client.remote.MobileCapabilityType;
 
 public class TestBase 
 {
@@ -44,6 +48,24 @@ public class TestBase
 		return (PhantomJSDriver) driver;
 	}
 	
+	public static void  getApk(String apkpath) throws Exception
+	{
+		
+		//File appDir = new File(System.getProperty("user.dir")+"/APK_File/JackHenry.apk");							
+				File app = new File(apkpath);
+				DesiredCapabilities dc = new DesiredCapabilities();
+		        dc.setCapability("deviceName", "Lolipop");
+		        //dc.setCapability(MobileCapabilityType.BROWSER_NAME, "Android");
+		        dc.setCapability(MobileCapabilityType.VERSION, "5.0");
+		        dc.setCapability("platformName", "Android");
+				dc.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
+		      //  dc.setCapability(MobileCapabilityType.APP, "B:\\Extent_Reporting_HybridFrameWork\\HybridFramework\\APK_File\\JackHenry.apk");
+		        dc.setCapability(MobileCapabilityType.APPIUM_VERSION, "1.7.2");
+		        driver = new RemoteWebDriver(new URL("http://127.0.0.1:4723/wd/hub"), dc);
+		       // d = new AppiumDriver<> (new URL("http://127.0.0.1:4723/wd/hub"), dc);
+
+
+		}
  	public static void getBrowser(String browser)
 	{
 		System.out.println(System.getProperty("user.dir"));

@@ -22,7 +22,7 @@ public class ExtentReport
 		{
 			sdf = new SimpleDateFormat("dd-MM-YYYY-hh-mm-SS-SSS");
 			try {
-				extent = new ExtentReports(AppConfig.getReportPath()+sdf.format(new Date())+".html",false);
+				extent = new ExtentReports(AppConfig.getReportPath1()+sdf.format(new Date())+".html",false);
 				} 
 			catch (IOException e) {
 				e.printStackTrace();

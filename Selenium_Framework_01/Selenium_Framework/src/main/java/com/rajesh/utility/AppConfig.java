@@ -80,7 +80,20 @@ public class AppConfig
 		return null;
 	}
 	
-		
+	public static String getApkPathLocation() throws IOException
+	{
+		try
+		{
+			fis = new FileInputStream(appFile);
+			prop = new Properties();
+			prop.load(fis);
+			
+			return prop.getProperty("APKPATH");
+		}
+		catch(Exception e){ e.printStackTrace();}
+		return null;
+	}
+	
 	public static String getReportPath() throws IOException
 	{
 		try
@@ -94,7 +107,19 @@ public class AppConfig
 		catch(Exception e){ e.printStackTrace();}
 		return null;
 	}
-	
+	public static String getReportPath1() throws IOException
+	{
+		try
+		{
+			fis = new FileInputStream(appFile);
+			prop = new Properties();
+			prop.load(fis);
+			
+			return prop.getProperty("ExtentMobRepLoc");
+		}
+		catch(Exception e){ e.printStackTrace();}
+		return null;
+	}
 	public static String getScreenShotPath() throws IOException
 	{
 		try

@@ -20,13 +20,14 @@ import com.relevantcodes.extentreports.LogStatus;
 public class TestEnvironment 
 {	
 	@BeforeClass(alwaysRun=true)
-	public void setUp() throws InterruptedException, NullPointerException, IOException
+	public void setUp() throws Exception
 	{
 		System.out.println("*****************************************************");
 		System.out.println("launching Browser");
-		TestBase.getBrowser(AppConfig.getBrowser());
-		WaitHelper.setImplicitWait(50);
-		WaitHelper.setPageLoadTimeout(50);
+		//TestBase.getBrowser(AppConfig.getBrowser());
+		TestBase.getApk(AppConfig.getApkPathLocation());
+		//WaitHelper.setImplicitWait(50);
+		//WaitHelper.setPageLoadTimeout(50);
 	}
 	
 	@BeforeTest
@@ -69,7 +70,7 @@ public class TestEnvironment
 				{
 					System.out.println("Closing the Browser");
 					System.out.println("*****************************************************");
-					TestBase.driver.close();
+					//TestBase.driver.close();
 					TestBase.driver.quit();
 				}
 	}
