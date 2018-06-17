@@ -12,20 +12,18 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
-import com.rajesh.report.ExtentReport;
+import com.rajesh.report.ExtentReport1;
 import com.rajesh.utility.AppConfig;
-import com.rajesh.utility.WaitHelper;
 import com.relevantcodes.extentreports.LogStatus;
 
-public class TestEnvironment 
-{	
+public class TestEnvironment1 {
 	@BeforeClass(alwaysRun=true)
 	public void setUp() throws Exception
 	{
 		System.out.println("*****************************************************");
-		System.out.println("launching Apk");
-		//TestBase.getBrowser(AppConfig.getBrowser());
-		TestBase.getApk(AppConfig.getApkPathLocation());
+		System.out.println("launching Browser");
+		TestBase.getBrowser(AppConfig.getBrowser());
+		//TestBase.getApk(AppConfig.getApkPathLocation());
 		//WaitHelper.setImplicitWait(50);
 		//WaitHelper.setPageLoadTimeout(50);
 	}
@@ -33,34 +31,34 @@ public class TestEnvironment
 	@BeforeTest
 	public void testStart() throws IOException
 	{			   
-		ExtentReport.extent.addSystemInfo("Project Name","Rajesh Selenium Web  Project");
-		ExtentReport.extent.addSystemInfo("Time Zone", System.getProperty("user.timezone"));
-		ExtentReport.extent.addSystemInfo("User Location", System.getProperty("user.country"));
-		ExtentReport.extent.addSystemInfo("OS version", System.getProperty("os.version"));
-		ExtentReport.extent.addSystemInfo("Java Version", System.getProperty("java.version"));
+		ExtentReport1.extent.addSystemInfo("Project Name","Rajesh Selenium Web  Project");
+		ExtentReport1.extent.addSystemInfo("Time Zone", System.getProperty("user.timezone"));
+		ExtentReport1.extent.addSystemInfo("User Location", System.getProperty("user.country"));
+		ExtentReport1.extent.addSystemInfo("OS version", System.getProperty("os.version"));
+		ExtentReport1.extent.addSystemInfo("Java Version", System.getProperty("java.version"));
 		
-		ExtentReport.extent.loadConfig(new File(AppConfig.getExtent_ConfigXML()));
+		ExtentReport1.extent.loadConfig(new File(AppConfig.getExtent_ConfigXML()));
 	}
 	
 	@BeforeMethod
 	public static void beforeMethod(Method result)
 	{
-		ExtentReport.test=ExtentReport.extent.startTest(result.getName());
-		ExtentReport.test.log(LogStatus.INFO,result.getName()+" Test has Started");
+		ExtentReport1.test=ExtentReport1.extent.startTest(result.getName());
+		ExtentReport1.test.log(LogStatus.INFO,result.getName()+" Test has Started");
 	}
 	
 	@AfterMethod
 	public static void afterMethod(ITestResult result) throws IOException
 	{
-		ExtentReport report = new ExtentReport();
+		ExtentReport1 report = new ExtentReport1();
 		report.getResult(result);
 	}
 	
 	@AfterTest
 	public void testResult()
 	{
-		ExtentReport.extent.endTest(ExtentReport.test);
-		ExtentReport.extent.flush();	
+		ExtentReport1.extent.endTest(ExtentReport1.test);
+		ExtentReport1.extent.flush();	
 	}
 	
 	@AfterClass(alwaysRun=true)
@@ -68,10 +66,11 @@ public class TestEnvironment
 	{
 		if(TestBase.driver!=null)
 				{
-					System.out.println("Closing Apk");
+					System.out.println("Closing the Browser");
 					System.out.println("*****************************************************");
 					//TestBase.driver.close();
-					//TestBase.driver.quit();
+					TestBase.driver.quit();
 				}
 	}
+
 }

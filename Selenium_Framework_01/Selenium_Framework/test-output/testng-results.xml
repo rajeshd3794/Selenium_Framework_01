@@ -1,28 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="1" failed="0" ignored="0" total="2" passed="1">
+<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="110" started-at="2018-04-12T06:51:33Z" finished-at="2018-04-12T06:51:33Z">
+  <suite name="Default suite" duration-ms="11689" started-at="2018-06-14T00:38:02Z" finished-at="2018-06-14T00:38:13Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="110" started-at="2018-04-12T06:51:33Z" finished-at="2018-04-12T06:51:33Z">
-      <class name="com.aditya.homePage.TestNGTest">
-        <test-method status="PASS" signature="Firstmethod()[pri:0, instance:com.aditya.homePage.TestNGTest@7a3d45bd]" name="Firstmethod" duration-ms="28" started-at="2018-04-12T06:51:33Z" finished-at="2018-04-12T06:51:33Z">
+    <test name="Default test" duration-ms="11689" started-at="2018-06-14T00:38:02Z" finished-at="2018-06-14T00:38:13Z">
+      <class name="com.rajesh.MyContactForm.MyContactForm_Login">
+        <test-method status="PASS" signature="testStart()[pri:0, instance:com.rajesh.MyContactForm.MyContactForm_Login@78ac1102]" name="testStart" is-config="true" duration-ms="250" started-at="2018-06-14T00:38:02Z" finished-at="2018-06-14T00:38:02Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Firstmethod -->
-        <test-method status="SKIP" signature="Secondmethod()[pri:0, instance:com.aditya.homePage.TestNGTest@7a3d45bd]" name="Secondmethod" duration-ms="7" started-at="2018-04-12T06:51:33Z" finished-at="2018-04-12T06:51:33Z">
-          <exception class="org.testng.SkipException">
-            <message>
-              <![CDATA[Not Matched]]>
-            </message>
+        </test-method> <!-- testStart -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.rajesh.MyContactForm.MyContactForm_Login@78ac1102]" name="setUp" is-config="true" duration-ms="5071" started-at="2018-06-14T00:38:02Z" finished-at="2018-06-14T00:38:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:com.rajesh.MyContactForm.MyContactForm_Login@78ac1102]" name="beforeMethod" is-config="true" duration-ms="4" started-at="2018-06-14T00:38:07Z" finished-at="2018-06-14T00:38:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.rajesh.MyContactForm.MyContactForm_Login.userlogin(java.lang.String,java.lang.String) throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="FAIL" signature="userlogin(java.lang.String, java.lang.String)[pri:0, instance:com.rajesh.MyContactForm.MyContactForm_Login@78ac1102]" name="userlogin" duration-ms="4181" started-at="2018-06-14T00:38:07Z" data-provider="MyContatcForm Registration data" finished-at="2018-06-14T00:38:12Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[rajeshd3249]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[123456.0]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.NullPointerException">
             <full-stacktrace>
-              <![CDATA[org.testng.SkipException: Not Matched
-at com.aditya.homePage.TestNGTest.Secondmethod(TestNGTest.java:20)
+              <![CDATA[java.lang.NullPointerException
+at com.rajesh.MyContactForm.MyContactForm_Login.userlogin(MyContactForm_Login.java:38)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:497)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
 at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
 at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
@@ -41,16 +65,35 @@ at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
 at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
 at org.testng.TestNG.runSuites(TestNG.java:1049)
 at org.testng.TestNG.run(TestNG.java:1017)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.testng.SkipException -->
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Secondmethod -->
-      </class> <!-- com.aditya.homePage.TestNGTest -->
+        </test-method> <!-- userlogin -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.rajesh.MyContactForm.MyContactForm_Login@78ac1102]" name="afterMethod" is-config="true" duration-ms="371" started-at="2018-06-14T00:38:12Z" finished-at="2018-06-14T00:38:12Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=userlogin status=FAILURE method=MyContactForm_Login.userlogin(java.lang.String, java.lang.String)[pri:0, instance:com.rajesh.MyContactForm.MyContactForm_Login@78ac1102] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.rajesh.MyContactForm.MyContactForm_Login@78ac1102]" name="tearDown" is-config="true" duration-ms="862" started-at="2018-06-14T00:38:12Z" finished-at="2018-06-14T00:38:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="testResult()[pri:0, instance:com.rajesh.MyContactForm.MyContactForm_Login@78ac1102]" name="testResult" is-config="true" duration-ms="305" started-at="2018-06-14T00:38:13Z" finished-at="2018-06-14T00:38:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testResult -->
+      </class> <!-- com.rajesh.MyContactForm.MyContactForm_Login -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -3,11 +3,17 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.aditya.homePage.TestNGTest">
+      <class name="com.rajesh.MyContactForm.MyContactForm_Login">
         <methods>
-          <include name="Secondmethod"/>
+          <include name="userlogin" invocation-numbers="0"/>
+          <include name="beforeMethod"/>
+          <include name="testStart"/>
+          <include name="testResult"/>
+          <include name="tearDown"/>
+          <include name="afterMethod"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- com.aditya.homePage.TestNGTest -->
+      </class> <!-- com.rajesh.MyContactForm.MyContactForm_Login -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
